@@ -1,0 +1,23 @@
+### POST - Crear Post
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "title": "Post Dos",
+  "content": "Contenido del post dos"
+}
+
+### GET - Obtener todos los posts
+GET http://localhost:8080/api/posts
+
+### GET - Obtener post por ID
+GET http://localhost:8080/api/posts/2
+
+### PUT - Actualizar post por ID
+PUT http://localhost:8080/api/posts/2
+Content-Type: application/json
+
+{
+  "title": "Post Dos Actualizado",
+  "content": "Contenido actualizado del post dos"
+}
