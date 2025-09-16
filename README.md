@@ -14,18 +14,13 @@ Proyecto de ejemplo para gestión de base de datos con Spring Boot.
 
 1. Clona el repositorio:
    ```
-   git clone <url-del-repositorio>
+   git clone https://github.com/demodogo/fs_db_sboot
    ```
 2. Configura la base de datos en `src/main/resources/application.properties`.
 3. Ejecuta el proyecto:
    ```
    ./mvnw spring-boot:run
    ```
-   o
-   ```
-   ./gradlew bootRun
-   ```
-
 ## Estructura del proyecto
 
 - `src/main/java`: Código fuente principal
@@ -34,7 +29,7 @@ Proyecto de ejemplo para gestión de base de datos con Spring Boot.
 
 ## Endpoints principales
 
-- `/api/...` (especificar endpoints si aplica)
+- `/api/...` 
 
 ## Autor
 
