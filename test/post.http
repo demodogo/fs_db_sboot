@@ -3,21 +3,30 @@ POST http://localhost:8080/api/posts
 Content-Type: application/json
 
 {
-  "title": "Post Dos",
-  "content": "Contenido del post dos"
+  "title": "Post 4",
+  "content": "Contenido del post 4"
 }
 
 ### GET - Obtener todos los posts
 GET http://localhost:8080/api/posts
 
+### GET - Obtener todos los posts con comentarios
+GET http://localhost:8080/api/posts?withComments=true
+
 ### GET - Obtener post por ID
 GET http://localhost:8080/api/posts/2
 
+### GET - Obtener post por ID con comentarios
+GET http://localhost:8080/api/posts/1?withComments=true
+
 ### PUT - Actualizar post por ID
-PUT http://localhost:8080/api/posts/2
+PUT http://localhost:8080/api/posts/1
 Content-Type: application/json
 
 {
   "title": "Post Dos Actualizado",
   "content": "Contenido actualizado del post dos"
 }
+
+### DELETE - Eliminar post por ID
+DELETE http://localhost:8080/api/posts/2

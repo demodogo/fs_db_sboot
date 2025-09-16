@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class PostController {
         return new PostDTO(post.getId(),
                 post.getTitle(),
                 post.getContent(),
-                withComments ? service.getComments(post.getId()) : null
+                withComments ? post.getComments() : Collections.emptyList()
         );
     }
 

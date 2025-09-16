@@ -33,10 +33,6 @@ public class PostService {
         return repo.save(dbPost);
     }
 
-    public List<Comment> getComments(Long id) {
-        Post dbPost = repo.findById(id).orElseThrow(() -> new EntityNotFoundException("Post no encontrado"));
-        return dbPost.getComments();
-    }
 
     public void delete(Long id) {
         repo.deleteById(id);
