@@ -1,6 +1,8 @@
 package com.example.fs_db_sboot.posts;
 
 import com.example.fs_db_sboot.comments.Comment;
+import com.example.fs_db_sboot.ratings.Rating;
+import com.example.fs_db_sboot.ratings.RatingService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,15 +17,18 @@ import java.util.List;
 public class PostController {
 
     private final PostService service;
+    private final RatingService ratingService;
 
-
-    public record PostDTO(Long id, String title, String content, List<Comment> comments) {}
+    public record PostDTO(Long id, String title, String content, List<Comment> comments, List<Rating> ratings, Number avgRating) {}
 
     private PostDTO toDTO(Post post, boolean withComments) {
-        return new PostDTO(post.getId(),
+        return new PostDTO(
+                post.getId(),
                 post.getTitle(),
                 post.getContent(),
-                withComments ? post.getComments() : Collections.emptyList()
+                withComments ? post.getComments() : Collections.emptyList(),
+                post.getRatings(),
+                ratingService.averageForPost(post.getId())
         );
     }
 

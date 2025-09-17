@@ -1,0 +1,14 @@
+### GET - Obtener Rating de un Post
+GET http://localhost:8080/api/ratings/posts/4
+
+
+### POST - Crear Rating de un Post
+POST http://localhost:8080/api/ratings/posts/4
+Content-Type: application/json
+
+{
+  "score": 3
+}
+
+### DELETE - Eliminar Rating de un Post
+DELETE http://localhost:8080/api/ratings/1

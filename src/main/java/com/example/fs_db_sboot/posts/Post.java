@@ -1,6 +1,7 @@
 package com.example.fs_db_sboot.posts;
 
 import com.example.fs_db_sboot.comments.Comment;
+import com.example.fs_db_sboot.ratings.Rating;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -32,8 +33,11 @@ public class Post {
     @Column(name = "content", nullable = false, length = 4000)
     private String content;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Rating> ratings;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
