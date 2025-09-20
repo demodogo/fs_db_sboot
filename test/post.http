@@ -3,8 +3,10 @@ POST http://localhost:8080/api/posts
 Content-Type: application/json
 
 {
-  "title": "Post 4",
-  "content": "Contenido del post 4"
+  "title": "{{$random.book.title}}",
+   "content": "{{$random.lorem.paragraph}}"
+
+
 }
 
 ### GET - Obtener todos los posts
@@ -14,19 +16,19 @@ GET http://localhost:8080/api/posts
 GET http://localhost:8080/api/posts?withComments=true
 
 ### GET - Obtener post por ID
-GET http://localhost:8080/api/posts/2
+GET http://localhost:8080/api/posts/5
 
 ### GET - Obtener post por ID con comentarios
-GET http://localhost:8080/api/posts/1?withComments=true
+GET http://localhost:8080/api/posts/4?withComments=true
 
 ### PUT - Actualizar post por ID
-PUT http://localhost:8080/api/posts/1
+PUT http://localhost:8080/api/posts/4
 Content-Type: application/json
 
 {
-  "title": "Post Dos Actualizado",
-  "content": "Contenido actualizado del post dos"
+  "title": "Título Editado",
+  "content": "{{$random.lorem.paragraph}}"
 }
 
 ### DELETE - Eliminar post por ID
-DELETE http://localhost:8080/api/posts/2
+DELETE http://localhost:8080/api/posts/4

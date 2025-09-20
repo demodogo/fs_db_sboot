@@ -1,27 +1,28 @@
 ### POST - Crear Comentario (A post)
-POST http://localhost:8080/api/comments/posts/3
+POST http://localhost:8080/api/comments/posts/1
 Content-Type: application/json
 
 {
-  "author": "Autor del comentario 4342",
-  "content": "Contenido del comentario para el post 43234"
+  "author": "{{$random.name.firstName}} {{$random.name.lastName}}",
+  "content": "{{$random.lorem.sentence}}"
 }
 
 ### GET - Obtener Comentarios
 GET http://localhost:8080/api/comments
 
 ### GET - Obtener Comentario por ID
-GET http://localhost:8080/api/comments/1
+GET http://localhost:8080/api/comments/4
 
 
 ### PUT - Actualizar Comentario
-PUT http://localhost:8080/api/comments/1
+PUT http://localhost:8080/api/comments/4
 Content-Type: application/json
 
+
 {
-  "author": "Autor del comentario actualizado",
-  "content": "Contenido del comentario actualizado"
+  "author": "Juan Perez",
+  "content": "{{$random.lorem.sentence}}"
 }
 
 ### DELETE - Eliminar Comentario
-DELETE http://localhost:8080/api/comments/1
+DELETE http://localhost:8080/api/comments/4
