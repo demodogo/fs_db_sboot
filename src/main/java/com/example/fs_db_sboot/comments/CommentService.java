@@ -19,6 +19,7 @@ public class CommentService {
         return repo.findAll();
 
     }
+
     public Comment createForPost(Long postId, Comment body) {
         Post post = postRepo.findById(postId).orElseThrow(() -> new EntityNotFoundException("Post no encontrado"));
         body.setId(null);

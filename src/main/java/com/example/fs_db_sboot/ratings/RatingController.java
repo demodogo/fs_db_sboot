@@ -24,6 +24,7 @@ public class RatingController {
                 rating.getPost().getId()
         );
     }
+
     @GetMapping("/posts/{postId}")
     public List<RatingDTO> list(@PathVariable Long postId) {
         List<Rating> ratings = service.listByPost(postId);

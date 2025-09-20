@@ -34,7 +34,6 @@ public class RatingService {
     }
 
     public Double averageForPost(Long postId) {
-        Post post = posts.findById(postId).orElseThrow(() -> new EntityNotFoundException("Post no encontrado"));
         Double avg = ratings.findAverageByPost(postId);
         if (avg == null) return 0.0;
 
